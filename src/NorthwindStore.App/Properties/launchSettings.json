@@ -22,6 +22,17 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "https://localhost:5001;http://localhost:5000"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "environmentVariables": {
+        "ConnectionStrings__DB": "Data Source=tcp:northwind-db,1433; Initial Catalog=Northwind; User ID=sa; Password=DevPass_1"
+      },
+      "DockerfileRunArguments": "--network northwind-network",
+      "publishAllPorts": true,
+      "useSSL": true
     }
   }
 }
