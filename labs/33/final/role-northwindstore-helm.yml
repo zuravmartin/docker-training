@@ -1,0 +1,28 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: northwindstore-helm-role
+  namespace: northwindstore-helm
+rules:
+- apiGroups: ["", "extensions", "apps"]
+  resources: ["*"]
+  verbs: ["*"]
+- apiGroups: ["batch"]
+  resources:
+  - jobs
+  - cronjobs
+  verbs: ["*"]
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: northwindstore-helm-role-binding
+  namespace: northwindstore-helm
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: northwindstore-helm-role
+subjects:
+- kind: Group
+  namespace: dev
+  name: 4d2cf0ae-5589-4599-be74-dc353d4c3fc3
