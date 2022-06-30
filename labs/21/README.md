@@ -95,7 +95,6 @@ Pokud uživatel zadá adresu bez `www.`, tedy http://northwindstore.local, do pr
 
     ```
     annotations:
-        kubernetes.io/ingress.class: "nginx"
         nginx.ingress.kubernetes.io/rewrite-target: http://www.northwindstore.local/$1
     ```
 
