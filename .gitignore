@@ -364,4 +364,3 @@ FodyWeavers.xsd
 # Compiled styles
 /src/NorthwindStore.App/wwwroot/css/*.css
 /src/NorthwindStore.App/wwwroot/css/*.map
-/src/NorthwindStore.App/wwwroot/images/categories/*.bmp
