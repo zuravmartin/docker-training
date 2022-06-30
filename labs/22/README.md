@@ -47,7 +47,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -out aks-ingress-tls-prod.cr
 kubectl create secret tls ingress-tls --namespace northwindstore-prod --key aks-ingress-tls-prod.key --cert aks-ingress-tls-prod.crt
 ```
 
-3. Vezměte YAML soubor `app-ingress-test.yml` a doplňte do sekce `spec` následující parametry:
+3. Vezměte YAML soubory `app-ingress-prod.yml` a `app-ingress-prod-redirect.yml` a doplňte do sekce `spec` následující parametry:
 
 ```
   tls:
