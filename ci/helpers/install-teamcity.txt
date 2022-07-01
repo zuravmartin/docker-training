@@ -5,8 +5,8 @@ docker network create myteamcity-network
 
 # install TeamCity server
 docker run --name myteamcity `
-    -v d:/teamcity/data:/data/teamcity_server/datadir `
-    -v d:/teamcity/logs:/opt/teamcity/logs `
+    -v c:/teamcity/data:/data/teamcity_server/datadir `
+    -v c:/teamcity/logs:/opt/teamcity/logs `
     -p 8111:8111 `
     --restart always `
 	-d `
@@ -16,7 +16,7 @@ docker run --name myteamcity `
 # install TeamCity agent	
 docker run --name myteamcity-agent1 `
     -e SERVER_URL=http://myteamcity:8111/ `
-	-v d:/teamcity/agent1:/data/teamcity_agent/conf `
+	-v c:/teamcity/agent1:/data/teamcity_agent/conf `
 	-v myteamcity-agentvolume1:/var/lib/docker `
     --privileged -e DOCKER_IN_DOCKER=start `
 	--network myteamcity-network `
